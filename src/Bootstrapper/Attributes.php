@@ -75,7 +75,7 @@ class Attributes implements \ArrayAccess
      *                      The return value will be casted to boolean if
      *                      non-boolean was returned.
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return array_key_exists($offset, $this->attributes);
     }
@@ -90,7 +90,7 @@ class Attributes implements \ArrayAccess
      *                      </p>
      * @return mixed Can return all value types.
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->attributes[$offset];
     }
@@ -108,7 +108,7 @@ class Attributes implements \ArrayAccess
      *                      </p>
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $this->attributes[$offset] = $value;
     }
@@ -123,7 +123,7 @@ class Attributes implements \ArrayAccess
      *                      </p>
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->attributes[$offset]);
     }
